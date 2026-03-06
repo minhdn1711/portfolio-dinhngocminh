@@ -102,6 +102,19 @@ a {
 .navLinks a {
   color: var(--muted);
   font-size: 0.96rem;
+  position: relative;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  color: var(--muted);
+  transition: all 0.25s ease;
+}
+
+.navLinks a:hover {
+  color: var(--text);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  transform: translateY(-1px);
 }
 
 .heroGrid {
@@ -162,6 +175,15 @@ h4 {
   line-height: 1.75;
 }
 
+.glassPanel {
+  transition: transform 0.25s ease, border 0.25s ease;
+}
+
+.glassPanel:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,0.2);
+}
+
 .lead {
   margin: 18px 0 0;
   max-width: 60ch;
@@ -184,6 +206,7 @@ h4 {
 
 .button:hover {
   transform: translateY(-2px);
+  opacity: 0.95;
 }
 
 .button.primary {
@@ -293,6 +316,12 @@ h4 {
 .projectCard {
   display: grid;
   gap: 22px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.projectCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
 }
 
 .projectHeader {

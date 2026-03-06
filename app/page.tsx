@@ -1,3 +1,5 @@
+import FadeIn from "./components/FadeIn";
+
 const profile = {
   name: "Đinh Ngọc Minh",
   role: "Backend Developer",
@@ -130,220 +132,235 @@ const strengths = [
 export default function HomePage() {
   return (
     <main className="siteShell">
-      <section className="heroSection">
-        <div className="container">
-          <header className="topbar">
-            <div className="brandBlock">
-              <div className="brandDot" />
-              <span>{profile.name}</span>
+      <FadeIn>
+        <section className="heroSection section">
+          <div className="container">
+            <header className="topbar">
+              <div className="brandBlock">
+                <div className="brandDot" />
+                <span>{profile.name}</span>
+              </div>
+
+              <nav className="navLinks">
+                <a href="#about">Giới thiệu</a>
+                <a href="#projects">Dự án</a>
+                <a href="#experience">Kinh nghiệm</a>
+                <a href="#contact">Liên hệ</a>
+              </nav>
+            </header>
+
+            <div className="heroGrid">
+              <div className="heroCopy">
+                <p className="eyebrow">{profile.title}</p>
+                {/* <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7 }}
+                >
+                  Backend Developer PHP Laravel
+                </motion.h1> */}
+                <h1>
+                  Tôi xây dựng các hệ thống backend ổn định, có thể vận hành tốt trong môi trường production.
+                </h1>
+                <p className="lead">{profile.summary}</p>
+
+                <div className="ctaRow">
+                  <a className="button primary" href="#projects">
+                    Xem dự án
+                  </a>
+                  <a className="button ghost" href="#contact">
+                    Liên hệ
+                  </a>
+                </div>
+                <div className="metaRow">
+                  <span>{profile.location}</span>
+                  <span>{profile.availability}</span>
+                </div>
+              </div>
+
+              <aside className="heroCard">
+                <p className="cardEyebrow">Tổng quan</p>
+                <h3>Tóm tắt năng lực Backend</h3>
+
+                <ul className="cleanList">
+                  {recruiterPoints.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </aside>
             </div>
 
-            <nav className="navLinks">
-              <a href="#about">Giới thiệu</a>
-              <a href="#projects">Dự án</a>
-              <a href="#experience">Kinh nghiệm</a>
-              <a href="#contact">Liên hệ</a>
-            </nav>
-          </header>
-
-          <div className="heroGrid">
-            <div className="heroCopy">
-              <p className="eyebrow">{profile.title}</p>
-              <h1>
-                Tôi xây dựng các hệ thống backend ổn định, có thể vận hành tốt trong môi trường production.
-              </h1>
-              <p className="lead">{profile.summary}</p>
-
-              <div className="ctaRow">
-                <a className="button primary" href="#projects">
-                  Xem dự án
-                </a>
-                <a className="button ghost" href="#contact">
-                  Liên hệ
-                </a>
-              </div>
-              <div className="metaRow">
-                <span>{profile.location}</span>
-                <span>{profile.availability}</span>
-              </div>
+            <div className="statsGrid">
+              {coreStats.map((item) => (
+                <article className="statCard" key={item.label}>
+                  <div className="statValue">{item.value}</div>
+                  <p>{item.label}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      </FadeIn>
+      <FadeIn>
+        <section className="section" id="about">
+          <div className="container narrow">
+            <div className="sectionHeading">
+              <p className="sectionTag">Giới thiệu</p>
+              <h2>Tóm tắt chuyên môn</h2>
             </div>
 
-            <aside className="heroCard">
-              <p className="cardEyebrow">Tổng quan</p>
-              <h3>Tóm tắt năng lực Backend</h3>
+            <div className="glassPanel">
+              <p>
+                Tôi chuyên về phát triển backend cho các hệ thống doanh nghiệp và hướng dịch vụ. Tập trung vào việc xây dựng cấu trúc API rõ ràng, logic kinh doanh ổn định, xử lý dữ liệu hiệu quả, và các luồng tích hợp hỗ trợ nhu cầu vận hành thực tế.
+              </p>
+              <p>
+                Tôi phù hợp với các dự án cần Backend Developer có kinh nghiệm xây dựng kiến trúc hệ thống, xử lý luồng nghiệp vụ trên môi trường production, tích hợp dịch vụ bên thứ ba và phát triển logic ứng dụng phức tạp liên quan đến dữ liệu.
+              </p>
+            </div>
+          </div>
+        </section>
+      </FadeIn>
+      <FadeIn>
+        <section className="section">
+          <div className="container">
+            <div className="sectionHeading">
+              <p className="sectionTag">Công nghệ</p>
+              <h2>Công nghệ sử dụng</h2>
+            </div>
 
+            <div className="chipWrap">
+              {expertise.map((item) => (
+                <span className="chip" key={item}>
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+      </FadeIn>
+      <FadeIn>
+        <section className="section" id="projects">
+          <div className="container">
+            <div className="sectionHeading">
+              <p className="sectionTag">Dự án</p>
+              <h2>Dự án tiêu biểu</h2>
+            </div>
+
+            <div className="projectStack">
+              {projects.map((project) => (
+                <article className="projectCard" key={project.title}>
+                  <div className="projectHeader">
+                    <p className="projectCategory">{project.category}</p>
+                    <h3>{project.title}</h3>
+                    <p className="projectOverview">{project.overview}</p>
+                  </div>
+
+                  <div className="projectColumns">
+                    <div>
+                      <h4>Thành quả dự án</h4>
+                      <ul className="cleanList">
+                        {project.impact.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h4>Vai trò chính</h4>
+                      <ul className="cleanList">
+                        {project.responsibilities.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="chipWrap compact">
+                    {project.stack.map((item) => (
+                      <span className="chip" key={item}>
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      </FadeIn>
+      <FadeIn>
+        <section className="section" id="experience">
+          <div className="container">
+            <div className="sectionHeading">
+              <p className="sectionTag">Kinh nghiệm</p>
+              <h2>Kinh nghiệm làm việc</h2>
+            </div>
+
+            <div className="timeline">
+              {timeline.map((item) => (
+                <article className="timelineItem" key={`${item.period}-${item.org}`}>
+                  <div className="timelineLeft">
+                    <span className="timelinePeriod">{item.period}</span>
+                  </div>
+                  <div className="timelineRight">
+                    <p className="timelineRole">{item.title}</p>
+                    <h3>{item.org}</h3>
+                    <p>{item.description}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      </FadeIn>
+      <FadeIn>
+        <section className="section">
+          <div className="container gridTwo">
+            <div className="glassPanel">
+              <p className="sectionTag">Điểm mạnh</p>
+              <h2>Giá trị tôi mang lại cho đội ngũ Backend</h2>
               <ul className="cleanList">
-                {recruiterPoints.map((item) => (
+                {strengths.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-            </aside>
-          </div>
-
-          <div className="statsGrid">
-            {coreStats.map((item) => (
-              <article className="statCard" key={item.label}>
-                <div className="statValue">{item.value}</div>
-                <p>{item.label}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section" id="about">
-        <div className="container narrow">
-          <div className="sectionHeading">
-            <p className="sectionTag">Giới thiệu</p>
-            <h2>Tóm tắt chuyên môn</h2>
-          </div>
-
-          <div className="glassPanel">
-            <p>
-              Tôi chuyên về phát triển backend cho các hệ thống doanh nghiệp và hướng dịch vụ. Tập trung vào việc xây dựng cấu trúc API rõ ràng, logic kinh doanh ổn định, xử lý dữ liệu hiệu quả, và các luồng tích hợp hỗ trợ nhu cầu vận hành thực tế.
-            </p>
-            <p>
-              Tôi phù hợp với các dự án cần Backend Developer có kinh nghiệm xây dựng kiến trúc hệ thống, xử lý luồng nghiệp vụ trên môi trường production, tích hợp dịch vụ bên thứ ba và phát triển logic ứng dụng phức tạp liên quan đến dữ liệu.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container">
-          <div className="sectionHeading">
-            <p className="sectionTag">Công nghệ</p>
-            <h2>Công nghệ sử dụng</h2>
-          </div>
-
-          <div className="chipWrap">
-            {expertise.map((item) => (
-              <span className="chip" key={item}>
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section" id="projects">
-        <div className="container">
-          <div className="sectionHeading">
-            <p className="sectionTag">Dự án</p>
-            <h2>Dự án tiêu biểu</h2>
-          </div>
-
-          <div className="projectStack">
-            {projects.map((project) => (
-              <article className="projectCard" key={project.title}>
-                <div className="projectHeader">
-                  <p className="projectCategory">{project.category}</p>
-                  <h3>{project.title}</h3>
-                  <p className="projectOverview">{project.overview}</p>
-                </div>
-
-                <div className="projectColumns">
-                  <div>
-                    <h4>Thành quả dự án</h4>
-                    <ul className="cleanList">
-                      {project.impact.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h4>Vai trò chính</h4>
-                    <ul className="cleanList">
-                      {project.responsibilities.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="chipWrap compact">
-                  {project.stack.map((item) => (
-                    <span className="chip" key={item}>
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section" id="experience">
-        <div className="container">
-          <div className="sectionHeading">
-            <p className="sectionTag">Kinh nghiệm</p>
-            <h2>Kinh nghiệm làm việc</h2>
-          </div>
-
-          <div className="timeline">
-            {timeline.map((item) => (
-              <article className="timelineItem" key={`${item.period}-${item.org}`}>
-                <div className="timelineLeft">
-                  <span className="timelinePeriod">{item.period}</span>
-                </div>
-                <div className="timelineRight">
-                  <p className="timelineRole">{item.title}</p>
-                  <h3>{item.org}</h3>
-                  <p>{item.description}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container gridTwo">
-          <div className="glassPanel">
-            <p className="sectionTag">Điểm mạnh</p>
-            <h2>Giá trị tôi mang lại cho đội ngũ Backend</h2>
-            <ul className="cleanList">
-              {strengths.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="glassPanel">
-            <p className="sectionTag">Phù hợp với</p>
-            <h2>Vị trí hướng tới</h2>
-            <ul className="cleanList">
-              <li>Backend Developer</li>
-              <li>PHP Developer</li>
-              <li>Laravel Developer</li>
-              <li>API Developer</li>
-              <li>Backend Developer (Tích hợp hệ thống)</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section className="section" id="contact">
-        <div className="container">
-          <div className="contactCard">
-            <div>
-              <p className="sectionTag">Liên hệ</p>
-              <h2>Kết nối để trao đổi về cơ hội Backend</h2>
             </div>
-            <div className="contactLinks">
-              <a href={`mailto:${profile.email}`}>{profile.email}</a>
-              <a href={profile.github} target="_blank" rel="noreferrer">
-                {profile.github.replace("https://", "")}
-              </a>
-              <a href={profile.linkedin} target="_blank" rel="noreferrer">
-                {profile.linkedin.replace("https://", "")}
-              </a>
+
+            <div className="glassPanel">
+              <p className="sectionTag">Phù hợp với</p>
+              <h2>Vị trí hướng tới</h2>
+              <ul className="cleanList">
+                <li>Backend Developer</li>
+                <li>PHP Developer</li>
+                <li>Laravel Developer</li>
+                <li>API Developer</li>
+                <li>Backend Developer (Tích hợp hệ thống)</li>
+              </ul>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </FadeIn>
+      <FadeIn>
+        <section className="section" id="contact">
+          <div className="container">
+            <div className="contactCard">
+              <div>
+                <p className="sectionTag">Liên hệ</p>
+                <h2>Kết nối để trao đổi về cơ hội Backend</h2>
+              </div>
+              <div className="contactLinks">
+                <a href={`mailto:${profile.email}`}>{profile.email}</a>
+                <a href={profile.github} target="_blank" rel="noreferrer">
+                  {profile.github.replace("https://", "")}
+                </a>
+                <a href={profile.linkedin} target="_blank" rel="noreferrer">
+                  {profile.linkedin.replace("https://", "")}
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </FadeIn>
     </main>
   );
 }
