@@ -52,69 +52,83 @@ const recruiterPoints = [
 
 const projects = [
   {
-    title: "Hệ thống gửi thông báo khách hàng mua xe và bảo dưỡng",
+    title: "Hệ thống quản lý bảo dưỡng xe (Autocare)",
     category: "Dự án tại công ty hiện tại",
     overview:
-      "Xây dựng hệ thống tự động gửi thông báo cho khách hàng trong các kịch bản mua xe và nhắc lịch bảo dưỡng, giúp cửa hàng tự động hóa quy trình chăm sóc khách hàng.",
+      "Xây dựng hệ thống quản lý bảo dưỡng xe, đặt lịch tự động gửi tin nhắn cho khách hàng trong các kịch bản mua xe và nhắc lịch bảo dưỡng, giúp cửa hàng tự động hóa quy trình chăm sóc khách hàng.",
+    image: "/images/projects/project-autocare.jpg",
     impact: [
-      "Giảm khối lượng công việc gửi thông báo thủ công tại cửa hàng",
+      "Giảm khối lượng công việc gửi tin nhắn (zns, sms) thủ công tại cửa hàng",
+      "Cho phép gửi tin nhắn chăm sóc khashc hàng và đặt lịch gửi tin hoặc có thể gửi tin theo sự kiện như khách sau khi mua xe, sau khi bảo dưỡng, sinh nhật ...",
       "Chuẩn hóa quy trình chăm sóc khách hàng theo các mốc dịch vụ",
-      "Hỗ trợ xử lý gửi thông báo số lượng lớn thông qua hệ thống queue"
+      "Hỗ trợ xử lý gửi tin nhắn (zns, sms) số lượng lớn thông qua hệ thống queue",
+      "Tích hợp báo có của OCB cho phép tạo QR để khách hàng thanh toán khi bảo dưỡng xong, giúp cửa hàng dễ dàng thu tiền và quản lý giao dịch",
+      "Hơn 10 doanh nghiệp lớn sửa dụng hệ thống (Kường Ngân, Tân Long Vân, HonDa Hải Dương...), hàng nghìn khách hàng được chăm sóc tự động mỗi tháng"
     ],
     responsibilities: [
       "Thiết kế và phát triển RESTful API bằng Laravel",
       "Tích hợp dịch vụ SMS và Zalo ZNS",
-      "Sử dụng RabbitMQ cho xử lý tác vụ bất đồng bộ",
+      "Sử dụng RabbitMQ cho xử lý tác vụ bất đồng bộ, báo có của OCB",
       "Sử dụng Redis cho caching và hỗ trợ xử lý queue",
-      "Thiết kế và xử lý dữ liệu liên quan đến khách hàng, cửa hàng và thông báo"
+      "Thiết kế và xử lý dữ liệu liên quan đến khách hàng, cửa hàng và thông báo",
+      "Phát triển và tối ưu UI/UX, xây dựng các chức năng giao diện mới bằng ReactJS"
     ],
-    stack: ["PHP", "Laravel", "MySQL", "RabbitMQ", "Redis", "SMS", "ZNS"]
+    stack: ["PHP", "Laravel", "MySQL", "RabbitMQ", "Redis", "SMS", "ZNS", "ReactJS", "Cache"]
   },
   {
-    title: "Hệ thống quản lý nghiệp vụ doanh nghiệp",
-    category: "Phát triển hệ thống nội bộ",
+    title: "Hệ thống Học Bạ Số",
+    category: "Nền tảng dữ liệu giáo dục",
     overview:
-      "Phát triển các module backend cho hệ thống quản lý doanh nghiệp bao gồm quản lý khách hàng, xử lý giao dịch và các chức năng báo cáo.",
+      "Phát triển hệ thống backend cho nền tảng học bạ số, phục vụ việc đồng bộ và quản lý dữ liệu học sinh giữa các trường học và Sở Giáo dục.",
+    image: "/images/projects/project-hocbaso.jpg",
     impact: [
-      "Cải thiện khả năng bảo trì hệ thống backend",
-      "Tổ chức logic nghiệp vụ rõ ràng hơn",
-      "Tối ưu cấu trúc dữ liệu và truy vấn database"
+      "Đồng bộ dữ liệu học sinh từ sở giáo dục về hệ thống nhà trường",
+      "Đặt lịch đồng bộ dữ liệu từ hệ thống quản lý trường học về và đẩy dữ liệu lên sở giáo dục",
+      "Tối ưu cấu trúc dữ liệu và truy vấn database",
+      "Tạo học bạ số, ký sổ và đẩy dữ liệu học bạ số lên sở giáo dục"
     ],
     responsibilities: [
       "Phát triển API backend cho hệ thống",
       "Xây dựng module xác thực và logic nghiệp vụ",
       "Thiết kế và tối ưu cấu trúc cơ sở dữ liệu",
-      "Làm việc với SQL Server cho hệ thống dữ liệu doanh nghiệp"
+      "Làm việc với Oracle cho hệ thống dữ liệu ngành",
+      "Giáo viên và các bộ quản lý ký số và đẩy dữ liệu ký số cho học bạ để đẩy XML dữ liệu lên sở giáo dục",
+      "Phát triển và tối ưu UI/UX, xây dựng các chức năng giao diện mới bằng ReactJS"
     ],
-    stack: ["PHP", "Laravel", "SQL Server", "RESTful API"]
+    stack: ["PHP", "Laravel", "Oracle", "RESTful API", "Cache", "MinIO", "ReactJS"]
   },
   {
-    title: "Hệ thống xử lý tác vụ nền và tích hợp hệ thống",
-    category: "Xử lý background job và tích hợp hệ thống",
+    title: "EduQuiz – Nền tảng ôn thi và thi trắc nghiệm trực tuyến",
+    category: "Nền tảng giáo dục trực tuyến",
     overview:
-      "Xây dựng và duy trì hệ thống xử lý tác vụ nền cho các chức năng như gửi thông báo, xử lý batch job và đồng bộ dữ liệu.",
+      "Phát triển backend cho nền tảng ôn thi và thi trắc nghiệm trực tuyến, cung cấp hệ thống quản lý đề thi, tài liệu học tập và thống kê kết quả cho nhiều trường học.",
+    image: "/images/projects/project-eduquiz.jpg",
     impact: [
-      "Giảm tải cho request chính của hệ thống",
-      "Tăng độ ổn định cho các tác vụ xử lý nền",
-      "Hỗ trợ cơ chế retry giúp hệ thống hoạt động ổn định hơn"
+      "Xây dựng nền tảng ôn thi trực tuyến cho nhiều trường học, hỗ trợ học sinh luyện tập và thi thử",
+      "Hỗ trợ nhiều trường học sử dụng chung một nền tảng ôn thi trực tuyến",
+      "Chuẩn hóa dữ liệu đề thi, tài liệu và kết quả học tập",
+      "Cung cấp hệ thống thống kê và quản lý dữ liệu phục vụ giáo viên và học sinh"
     ],
     responsibilities: [
-      "Tích hợp RabbitMQ worker vào hệ thống",
-      "Xây dựng cơ chế retry cho background job",
-      "Sử dụng Redis cho caching và tối ưu truy cập dữ liệu",
-      "Hỗ trợ vận hành các luồng xử lý dữ liệu bất đồng bộ"
+      "Phát triển RESTful API bằng Laravel cho các module: kênh đề thi, đề thi, tài liệu, thống kê, trường học, môn học, chuyên đề và kỹ năng",
+      "Xây dựng hệ thống ôn thi và làm bài thi trắc nghiệm trực tuyến",
+      "Phối hợp với Tech Lead thiết kế cơ sở dữ liệu và luồng xử lý dữ liệu",
+      "Chuẩn hóa request/response API, xây dựng cơ chế logging và kiểm soát lỗi",
+      "Thiết kế mô hình workspace (multi-tenant) theo từng trường học để tách dữ liệu và phân quyền truy cập",
+      "Phát triển module CRM cho admin: quản lý đơn hàng và nâng cấp tài khoản VIP",
+      "Xây dựng API cho hệ thống CMS/Blog",
+      "Triển khai hệ thống Laravel lên VPS và quản lý source code bằng GitLab, theo dõi tiến độ dự án bằng Jira"
     ],
-    stack: ["Laravel", "RabbitMQ", "Redis", "Queue Worker"]
+    stack: ["PHP", "Laravel", "MySQL", "RESTful API", "Multi-tenant Architecture", "GitLab", "VPS"]
   }
 ];
 
 const timeline = [
   {
     period: "Hiện tại",
-    title: "Backend Developer",
+    title: "Backend Developer + ReactJS Developer",
     org: "Công ty hiện tại",
-    description:
-      "Phát triển backend cho hệ thống nghiệp vụ, tích hợp API, xây dựng hệ thống gửi thông báo và hỗ trợ triển khai hệ thống production."
+    description: "Phát triển backend cho hệ thống nghiệp vụ, tích hợp API, xây dựng hệ thống gửi thông báo và hỗ trợ triển khai hệ thống production. Phát triển giao diện và tối ưu trải nghiệm người dùng bằng ReactJS. Tham gia thiết kế kiến trúc hệ thống và tối ưu hiệu suất backend. Làm việc với các dịch vụ bên thứ ba như SMS, ZNS và hệ thống queue để đảm bảo tính ổn định và hiệu quả của hệ thống. Theo dõi và phân tích log hệ thống trên Linux, quản lý tiến trình queue worker bằng Supervisor, kiểm tra cache và cấu hình server để đảm bảo hệ thống hoạt động ổn định."
   },
   {
     period: "Trước đó",
@@ -228,22 +242,28 @@ export default function HomePage() {
       </FadeIn>
       <FadeIn>
         <section className="section" id="about">
-          <div className="container narrow">
+          <div className="container">
             <div className="sectionHeading">
               <p className="sectionTag">Giới thiệu</p>
               <h2>Tóm tắt chuyên môn</h2>
             </div>
-
-            <div className="glassPanel">
-              <p>
-                Tôi chuyên về phát triển backend cho các hệ thống doanh nghiệp và hướng dịch vụ. Tập trung vào việc xây dựng cấu trúc API rõ ràng, logic kinh doanh ổn định, xử lý dữ liệu hiệu quả, và các luồng tích hợp hỗ trợ nhu cầu vận hành thực tế.
-              </p>
-              <p>
-                Phù hợp với các dự án cần xây dựng kiến trúc backend, xử lý nghiệp vụ production, tích hợp third-party và phát triển logic phức tạp.
-              </p>
-              <p>
-                Ngoài ra, tôi cũng có khả năng phát triển giao diện và tối ưu trải nghiệm người dùng.
-              </p>
+          </div>
+          <div className="container">
+            <div className="aboutGrid">
+              <div className="glassPanel aboutText">
+                <p>
+                  Tôi chuyên về phát triển backend cho các hệ thống doanh nghiệp và hướng dịch vụ. Tập trung vào việc xây dựng cấu trúc API rõ ràng, logic kinh doanh ổn định, xử lý dữ liệu hiệu quả, và các luồng tích hợp hỗ trợ nhu cầu vận hành thực tế.
+                </p>
+                <p>
+                  Phù hợp với các dự án cần xây dựng kiến trúc backend, xử lý nghiệp vụ production, tích hợp third-party và phát triển logic phức tạp.
+                </p>
+                <p>
+                  Ngoài ra, tôi cũng có khả năng phát triển giao diện và tối ưu trải nghiệm người dùng.
+                </p>
+              </div>
+              <div className="aboutImage">
+                <img src="/images/rv-code.jpg" alt="Working setup" />
+              </div>
             </div>
           </div>
         </section>
@@ -277,6 +297,11 @@ export default function HomePage() {
             <div className="projectStack">
               {projects.map((project) => (
                 <article className="projectCard" key={project.title}>
+                  {project.image && (
+                    <div className="projectImage">
+                      <img src={project.image} alt={project.title} />
+                    </div>
+                  )}
                   <div className="projectHeader">
                     <p className="projectCategory">{project.category}</p>
                     <h3>{project.title}</h3>
@@ -327,14 +352,12 @@ export default function HomePage() {
             <div className="timeline">
               {timeline.map((item) => (
                 <article className="timelineItem" key={`${item.period}-${item.org}`}>
-                  <div className="timelineLeft">
+                  <div className="timelineHeader">
                     <span className="timelinePeriod">{item.period}</span>
-                  </div>
-                  <div className="timelineRight">
                     <p className="timelineRole">{item.title}</p>
-                    <h3>{item.org}</h3>
-                    <p>{item.description}</p>
                   </div>
+                  <h3 className="timelineOrg">{item.org}</h3>
+                  <p className="timelineDescription">{item.description}</p>
                 </article>
               ))}
             </div>
@@ -384,6 +407,8 @@ export default function HomePage() {
                 <li>Laravel Developer</li>
                 <li>API Developer</li>
                 <li>Backend Developer (Tích hợp hệ thống)</li>
+                <li>Fullstack Developer</li>
+                <li>DevOps Engineer</li>
               </ul>
             </div>
           </div>
