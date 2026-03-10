@@ -36,6 +36,24 @@ a {
   text-decoration: none;
 }
 
+/* Focus states for accessibility */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.navLinks a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  color: var(--text);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
 .siteShell {
   min-height: 100vh;
 }
@@ -91,6 +109,106 @@ a {
   border-radius: 999px;
   background: linear-gradient(135deg, var(--primary), var(--primary-2));
   box-shadow: 0 0 24px rgba(93, 212, 255, 0.55);
+}
+
+/* Avatar styles */
+.heroAvatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid var(--primary);
+  box-shadow: 0 0 30px rgba(93, 212, 255, 0.3);
+  object-fit: cover;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+}
+
+.heroAvatarWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid var(--primary);
+  box-shadow: 0 0 30px rgba(93, 212, 255, 0.3);
+  background: linear-gradient(135deg, var(--bg-2), var(--surface));
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.heroContentWithAvatar {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+@media (max-width: 680px) {
+  .heroContentWithAvatar {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Education section */
+.educationItem {
+  padding: 20px 24px;
+  border-left: 3px solid var(--primary);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.educationYear {
+  font-size: 0.85rem;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.educationDegree {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.educationSchool {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Back to top button */
+.backToTop {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  color: #06111b;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(93, 212, 255, 0.3);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100;
+}
+
+.backToTop.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.backToTop:hover {
+  transform: translateY(-3px);
+}
+
+.backToTop:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 
 .navLinks {

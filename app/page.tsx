@@ -1,32 +1,36 @@
 import FadeIn from "./components/FadeIn";
+import BackToTop from "./components/BackToTop";
 
 const profile = {
   name: "Đinh Ngọc Minh",
   role: "Backend Developer",
   title: "Backend Developer PHP Laravel",
   summary:
-    "Backend Developer với khoảng 3 năm kinh nghiệm xây dựng RESTful API, hệ thống nghiệp vụ doanh nghiệp và các dịch vụ backend production sử dụng PHP Laravel.",
+    "Backend Developer với khoảng 3 năm kinh nghiệm xây dựng RESTful API, hệ thống nghiệp vụ doanh nghiệp và các dịch vụ backend production sử dụng PHP Laravel,  tập trung vào thiết kế API rõ ràng, tối ưu cơ sở dữ liệu và đảm bảo độ tin cậy của hệ thống.",
   location: "Việt Nam",
   email: "minh.dn1711@gmail.com",
   github: "https://github.com/minhdn1711",
   linkedin: "https://linkedin.com/in/minh-dinh-ngoc",
+  avatar: "/images/avt.jpg",
   availability: "Sẵn sàng cho vị trí Backend Developer / PHP Laravel Developer"
 };
 
 const coreStats = [
   { value: "3+", label: "Năm kinh nghiệm Backend" },
   { value: "REST", label: "Phát triển hệ thống RESTful API" },
-  { value: "DB", label: "MySQL, SQL Server, Oracle" },
+  { value: "DB", label: "MySQL, SQL Server, Oracle, PostgreSQL" },
   { value: "MQ", label: "RabbitMQ & Redis" }
 ];
 
 const expertise = [
   "PHP",
   "Laravel",
+  "ReactJs",
   "RESTful API",
   "MySQL",
   "SQL Server",
   "Oracle",
+  "PostgreSQL",
   "Redis",
   "RabbitMQ",
   "Git",
@@ -121,6 +125,15 @@ const timeline = [
   }
 ];
 
+const education = [
+  {
+    year: "2018 - 2022",
+    degree: "Công nghệ thông tin",
+    school: "Đại học Sư Phạm Kỹ Thuật Hưng Yên",
+    description: "Chuyên ngành Kỹ thuật phần mềm"
+  }
+];
+
 const strengths = [
   "Xây dựng hệ thống backend rõ ràng và dễ bảo trì",
   "Chuyển đổi yêu cầu nghiệp vụ thành API ổn định",
@@ -145,16 +158,32 @@ export default function HomePage() {
                 <a href="#about">Giới thiệu</a>
                 <a href="#projects">Dự án</a>
                 <a href="#experience">Kinh nghiệm</a>
+                <a href="#education">Học vấn</a>
                 <a href="#contact">Liên hệ</a>
               </nav>
             </header>
 
             <div className="heroGrid">
               <div className="heroCopy">
-                <p className="eyebrow">{profile.title}</p>
-                <h1>
-                  Tôi xây dựng các hệ thống backend ổn định, có thể vận hành tốt trong môi trường production.
-                </h1>
+                <div className="heroContentWithAvatar">
+                  {profile.avatar ? (
+                    <img
+                      src={profile.avatar}
+                      alt={profile.name}
+                      className="heroAvatar"
+                    />
+                  ) : (
+                    <div className="heroAvatarWrapper">
+                      {profile.name.split(' ').map(n => n[0]).join('')}
+                    </div>
+                  )}
+                  <div>
+                    <p className="eyebrow">{profile.title}</p>
+                    <h1>
+                      Tôi xây dựng các hệ thống backend ổn định, có thể vận hành tốt trong môi trường production.
+                    </h1>
+                  </div>
+                </div>
                 <p className="lead">{profile.summary}</p>
 
                 <div className="ctaRow">
@@ -207,7 +236,10 @@ export default function HomePage() {
                 Tôi chuyên về phát triển backend cho các hệ thống doanh nghiệp và hướng dịch vụ. Tập trung vào việc xây dựng cấu trúc API rõ ràng, logic kinh doanh ổn định, xử lý dữ liệu hiệu quả, và các luồng tích hợp hỗ trợ nhu cầu vận hành thực tế.
               </p>
               <p>
-                Tôi phù hợp với các dự án cần Backend Developer có kinh nghiệm xây dựng kiến trúc hệ thống, xử lý luồng nghiệp vụ trên môi trường production, tích hợp dịch vụ bên thứ ba và phát triển logic ứng dụng phức tạp liên quan đến dữ liệu.
+                Phù hợp với các dự án cần xây dựng kiến trúc backend, xử lý nghiệp vụ production, tích hợp third-party và phát triển logic phức tạp.
+              </p>
+              <p>
+                Ngoài ra, tôi cũng có khả năng phát triển giao diện và tối ưu trải nghiệm người dùng.
               </p>
             </div>
           </div>
@@ -307,6 +339,27 @@ export default function HomePage() {
         </section>
       </FadeIn>
       <FadeIn>
+        <section className="section" id="education">
+          <div className="container narrow">
+            <div className="sectionHeading">
+              <p className="sectionTag">Học vấn</p>
+              <h2>Trình độ học vấn</h2>
+            </div>
+
+            <div className="projectStack">
+              {education.map((item, index) => (
+                <article className="educationItem" key={index}>
+                  <p className="educationYear">{item.year}</p>
+                  <h3 className="educationDegree">{item.degree}</h3>
+                  <p className="educationSchool">{item.school}</p>
+                  <p className="lead">{item.description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      </FadeIn>
+      <FadeIn>
         <section className="section">
           <div className="container gridTwo">
             <div className="glassPanel">
@@ -354,6 +407,7 @@ export default function HomePage() {
           </div>
         </section>
       </FadeIn>
+      <BackToTop />
     </main>
   );
 }
