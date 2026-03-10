@@ -152,13 +152,6 @@ export default function HomePage() {
             <div className="heroGrid">
               <div className="heroCopy">
                 <p className="eyebrow">{profile.title}</p>
-                {/* <motion.h1
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7 }}
-                >
-                  Backend Developer PHP Laravel
-                </motion.h1> */}
                 <h1>
                   Tôi xây dựng các hệ thống backend ổn định, có thể vận hành tốt trong môi trường production.
                 </h1>
