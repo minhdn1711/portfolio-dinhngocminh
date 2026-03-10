@@ -166,21 +166,24 @@ export default function HomePage() {
             <div className="heroGrid">
               <div className="heroCopy">
                 <div className="heroContentWithAvatar">
-                  {profile.avatar ? (
-                    <img
-                      src={profile.avatar}
-                      alt={profile.name}
-                      className="heroAvatar"
-                    />
-                  ) : (
-                    <div className="heroAvatarWrapper">
-                      {profile.name.split(' ').map(n => n[0]).join('')}
-                    </div>
-                  )}
+                  <div style={{ position: 'relative' }}>
+                    <div className="heroAvatarDecoration" />
+                    {profile.avatar ? (
+                      <img
+                        src={profile.avatar}
+                        alt={profile.name}
+                        className="heroAvatar"
+                      />
+                    ) : (
+                      <div className="heroAvatarWrapper">
+                        {profile.name.split(' ').map(n => n[0]).join('')}
+                      </div>
+                    )}
+                  </div>
                   <div>
                     <p className="eyebrow">{profile.title}</p>
                     <h1>
-                      Tôi xây dựng các hệ thống backend ổn định, có thể vận hành tốt trong môi trường production.
+                      Backend Developer
                     </h1>
                   </div>
                 </div>
