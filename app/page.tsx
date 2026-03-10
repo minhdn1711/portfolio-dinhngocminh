@@ -53,7 +53,7 @@ const recruiterPoints = [
 const projects = [
   {
     title: "Hệ thống quản lý bảo dưỡng xe (Autocare)",
-    category: "Dự án tại công ty hiện tại",
+    category: "Dự án doanh nghiệp",
     overview:
       "Xây dựng hệ thống quản lý bảo dưỡng xe, đặt lịch tự động gửi tin nhắn cho khách hàng trong các kịch bản mua xe và nhắc lịch bảo dưỡng, giúp cửa hàng tự động hóa quy trình chăm sóc khách hàng.",
     image: "/images/projects/project-autocare.jpg",
@@ -127,13 +127,13 @@ const timeline = [
   {
     period: "Hiện tại",
     title: "Backend Developer + ReactJS Developer",
-    org: "Công ty hiện tại",
+    org: "Công ty Conek",
     description: "Phát triển backend cho hệ thống nghiệp vụ, tích hợp API, xây dựng hệ thống gửi thông báo và hỗ trợ triển khai hệ thống production. Phát triển giao diện và tối ưu trải nghiệm người dùng bằng ReactJS. Tham gia thiết kế kiến trúc hệ thống và tối ưu hiệu suất backend. Làm việc với các dịch vụ bên thứ ba như SMS, ZNS và hệ thống queue để đảm bảo tính ổn định và hiệu quả của hệ thống. Theo dõi và phân tích log hệ thống trên Linux, quản lý tiến trình queue worker bằng Supervisor, kiểm tra cache và cấu hình server để đảm bảo hệ thống hoạt động ổn định."
   },
   {
     period: "Trước đó",
     title: "Backend Developer",
-    org: "Các công ty trước",
+    org: "Công ty PT-Corp",
     description:
       "Tham gia phát triển các module backend, xây dựng hệ thống nội bộ và xử lý logic dữ liệu cho các ứng dụng doanh nghiệp."
   }
